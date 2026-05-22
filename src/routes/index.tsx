@@ -1,21 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, ShieldCheck, Microscope, Sprout, BadgeCheck, Activity, FlaskConical } from "lucide-react";
+import { ArrowRight, ShieldCheck, Microscope, Sprout, BadgeCheck, Activity, FlaskConical, Dna } from "lucide-react";
 import heroImg from "@/assets/hero-scientist.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dr. Faisal — Precision Plant Pathology Consultancy" },
-      { name: "description", content: "Cellular insights and crop pathology excellence for enterprise growers. Diagnostic accuracy of 99.8%, ISO certified methodologies." },
-      { property: "og:title", content: "Dr. Faisal — Precision Plant Pathology" },
-      { property: "og:description", content: "Cellular insights and crop pathology excellence for enterprise growers." },
+      { title: "Dr. Faisal Sohail Fateh — Principal Scientific Officer, Plant Pathology" },
+      { name: "description", content: "Independent plant pathology consultancy by Dr. Faisal Sohail Fateh, Principal Scientific Officer at NARC Islamabad. Specialising in mango, citrus, wheat rusts, rice diseases and molecular diagnostics." },
+      { property: "og:title", content: "Dr. Faisal Sohail Fateh — Plant Pathology" },
+      { property: "og:description", content: "Principal Scientific Officer at NARC Islamabad. Molecular diagnostics, crop disease management and field-tested research." },
     ],
   }),
   component: Index,
 });
 
-const TAGLINES = ["Precision Agriculture.", "Cellular Insights.", "Crop Pathology Excellence."];
+const TAGLINES = ["Mango Pathology.", "Molecular Diagnostics.", "Crop Disease Management."];
 
 function useTyping() {
   const [i, setI] = useState(0);
@@ -41,49 +41,51 @@ function useTyping() {
 function Index() {
   const typed = useTyping();
   return (
-    <div>
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
-        <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" aria-hidden />
-        <div className="absolute top-1/2 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" aria-hidden />
+    <div className="relative overflow-hidden">
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px] dark:bg-primary/10" aria-hidden />
+      <div className="absolute top-1/3 right-10 -z-10 h-[400px] w-[400px] rounded-full bg-accent/5 blur-[100px] dark:bg-accent/10" aria-hidden />
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-16 pb-24 lg:grid-cols-2 lg:gap-16 lg:pt-24 lg:pb-32">
+      {/* HERO */}
+      <section className="relative overflow-hidden pt-6 sm:pt-10">
+        <div className="absolute inset-0 grid-bg opacity-30 dark:opacity-20" aria-hidden />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-24 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pt-20 lg:pb-28">
           {/* LEFT */}
           <div className="flex flex-col justify-center animate-fade-up">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary dark:text-primary-foreground dark:bg-primary/20">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
-              Active research · 2,400+ field samples this quarter
+              Active research · Principal Scientific Officer, NARC Islamabad
             </span>
 
-            <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
               <span className="block text-foreground/90">Diagnosing the</span>
-              <span className="block gradient-text min-h-[1.1em]">
+              <span className="block gradient-text min-h-[2.4em] sm:min-h-[1.2em] md:min-h-[1.3em]">
                 {typed}
-                <span className="animate-blink text-accent">|</span>
+                <span className="animate-blink text-accent font-light">|</span>
               </span>
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Independent plant pathology consultancy uniting molecular diagnostics with
-              enterprise-scale agronomy. Clinical precision, field-tested results, ISO-certified
-              methodologies trusted by global growers.
+              Principal Scientific Officer at the National Agricultural Research Centre (NARC),
+              Islamabad. Over two decades of field and laboratory experience in plant pathology —
+              from mango sudden death and citrus decline to wheat rusts, rice diseases and fungal
+              identification. PhD from PMAS Arid Agriculture University, Rawalpindi.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/appointment"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-elegant transition-all duration-300 ease-out hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:bg-primary/95"
               >
                 Book Diagnostic
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary hover:text-primary"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:bg-card/90"
               >
                 Explore Services
               </Link>
@@ -91,37 +93,43 @@ function Index() {
           </div>
 
           {/* RIGHT */}
-          <div className="relative animate-fade-up">
-            <div className="relative grid grid-cols-6 grid-rows-6 gap-3">
-              <div className="col-span-5 row-span-6 overflow-hidden rounded-3xl border border-border/60 shadow-elegant">
+          <div className="flex flex-col gap-4 animate-fade-up" style={{ animationDelay: "150ms" }}>
+            {/* Image with floating name card */}
+            <div className="relative w-full group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+              <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-card shadow-elegant">
                 <img
                   src={heroImg}
                   alt="Dr. Faisal examining plant specimen in laboratory"
-                  className="h-full w-full object-cover"
+                  className="w-full object-cover max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] transition-transform duration-700 group-hover:scale-102"
                   width={896}
                   height={1216}
                 />
               </div>
-              <div className="col-span-2 col-start-5 row-span-2 row-start-1 rounded-2xl bg-accent/90 p-4 text-accent-foreground shadow-elegant">
-                <Microscope className="h-5 w-5" />
-                <p className="mt-2 text-xs font-medium leading-snug">Molecular DNA sequencing on-site</p>
-              </div>
-              <div className="col-span-2 col-start-5 row-span-2 row-start-5 rounded-2xl bg-primary p-4 text-primary-foreground shadow-elegant">
-                <FlaskConical className="h-5 w-5" />
-                <p className="mt-2 text-xs font-medium leading-snug">Phytopathology Lab — Class II</p>
+
+              {/* Floating glass name card — anchored inside image bottom */}
+              <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 sm:bottom-5 sm:left-6 sm:right-6 sm:p-5 transition-all duration-300 hover:scale-[1.01]">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+                    <BadgeCheck className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Dr. Faisal Sohail Fateh, PhD</p>
+                    <p className="text-xs text-muted-foreground">Principal Scientific Officer, NARC Islamabad</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Floating glass card */}
-            <div className="absolute -bottom-6 left-4 right-12 glass rounded-2xl p-4 sm:left-8 sm:right-20">
-              <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
-                  <BadgeCheck className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Dr. Faisal, PhD</p>
-                  <p className="text-xs text-muted-foreground">Lead Plant Pathology Consultant</p>
-                </div>
+            {/* Two info badges — below image, side by side */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 rounded-2xl bg-accent/10 border border-accent/20 p-4 text-foreground transition-all duration-300 hover:bg-accent/15">
+                <Microscope className="h-5 w-5 shrink-0 text-accent" />
+                <p className="text-xs font-semibold leading-snug">Molecular diagnostics & fungal identification</p>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl bg-primary/10 border border-primary/20 p-4 text-foreground transition-all duration-300 hover:bg-primary/15">
+                <FlaskConical className="h-5 w-5 shrink-0 text-primary" />
+                <p className="text-xs font-semibold leading-snug">NARC Phytopathology Lab, Islamabad</p>
               </div>
             </div>
           </div>
@@ -129,59 +137,65 @@ function Index() {
       </section>
 
       {/* VALIDATION TIER */}
-      <section className="mx-auto -mt-6 max-w-7xl px-6">
-        <div className="grid gap-4 md:grid-cols-3">
+      <section className="mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:mt-16">
+        <div className="grid gap-6 md:grid-cols-3 md:items-stretch">
           {[
-            { icon: Activity, kpi: "99.8%", label: "Diagnostic Accuracy", desc: "Cross-validated across 14,000+ field specimens." },
-            { icon: Sprout, kpi: "48 hrs", label: "Rapid Field Turnaround", desc: "Specimen-to-report including molecular assays." },
-            { icon: ShieldCheck, kpi: "ISO 17025", label: "Certified Methodologies", desc: "Accredited testing protocols & chain-of-custody." },
+            { icon: Activity, kpi: "20+", label: "Years of Experience", desc: "Scientific Officer at NARC since 2004, Principal Scientific Officer since 2020." },
+            { icon: Sprout, kpi: "60+", label: "Trainings Conducted", desc: "Local and international trainings benefitting 1,500+ farmers and scientists." },
+            { icon: ShieldCheck, kpi: "25+", label: "Peer-Reviewed Papers", desc: "Published in Pakistan Journal of Agricultural Research, Acta Horticulturae and more." },
           ].map((c, i) => (
             <div
               key={c.label}
-              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-elegant"
-              style={{ animationDelay: `${i * 80}ms` }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card p-6 shadow-elegant transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl animate-fade-up"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-              <c.icon className="h-6 w-6 text-accent" />
-              <p className="mt-4 text-3xl font-bold tracking-tight text-foreground">{c.kpi}</p>
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <c.icon className="h-5 w-5" />
+              </div>
+              <p className="mt-5 text-3xl font-extrabold tracking-tight text-foreground">{c.kpi}</p>
               <p className="mt-1 text-sm font-semibold text-primary">{c.label}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* DISCIPLINE BAND */}
-      <section className="mx-auto mt-32 max-w-7xl px-6">
+      <section className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:mt-28 lg:mb-20">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent">Specialization vectors</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-              From <span className="gradient-text">cell wall</span> to continental yield.
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent">Research specialisations</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+              From <span className="gradient-text">field survey</span> to molecular diagnosis.
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Four disciplines, one integrated practice — every recommendation traceable from molecular
-              diagnostic through field intervention.
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Four core disciplines — every recommendation grounded in two decades of hands-on
+              research at NARC and international collaboration with Australia, China and beyond.
             </p>
           </div>
-          <Link to="/research" className="text-sm font-semibold text-primary hover:underline">
-            View research portfolio →
+          <Link to="/research" className="group text-sm font-semibold text-primary hover:text-accent transition-colors flex items-center gap-1">
+            View research portfolio <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { t: "Phytopathology", d: "Disease etiology and host-pathogen biology." },
-            { t: "Crop Epidemiology", d: "Population-scale outbreak modeling." },
-            { t: "Molecular Diagnostics", d: "qPCR, LAMP and sequencing assays." },
-            { t: "Soil Microbiome", d: "Rhizosphere community profiling." },
-          ].map((d) => (
-            <div key={d.t} className="rounded-2xl border border-border/70 bg-secondary/40 p-6 transition-colors hover:border-accent/40 hover:bg-card">
+            { t: "Phytopathology", d: "Mango, citrus, guava and forest tree decline; disease etiology and host-pathogen biology.", icon: Sprout },
+            { t: "Crop Epidemiology", d: "Wheat rusts, rice diseases, potato black scurf — population-scale outbreak assessment.", icon: Microscope },
+            { t: "Molecular Diagnostics", d: "Fungal identification, phytoplasma detection and molecular characterisation techniques.", icon: Dna },
+            { t: "Mango Research", d: "Mango sudden death syndrome, postharvest diseases, high-density nursery establishment.", icon: FlaskConical },
+          ].map((d, idx) => (
+            <div 
+              key={d.t} 
+              className="rounded-2xl border border-border/70 bg-card p-6 shadow-elegant transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 hover:shadow-2xl animate-fade-up"
+              style={{ animationDelay: `${idx * 80}ms` }}
+            >
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
-                <Sprout className="h-5 w-5" />
+                <d.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-base font-semibold">{d.t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{d.d}</p>
+              <h3 className="mt-4 text-base font-bold text-foreground">{d.t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.d}</p>
             </div>
           ))}
         </div>
