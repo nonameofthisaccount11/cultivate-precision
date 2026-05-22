@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "postbuild": "node scripts/generate-netlify-client.js",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "deploy": "npx wrangler publish --release",
