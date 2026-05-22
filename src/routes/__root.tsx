@@ -11,6 +11,8 @@ import {
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Toaster } from "@/components/ui/sonner";
+
 
 
 
@@ -120,6 +122,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      <Toaster />
     </QueryClientProvider>
   );
 }
