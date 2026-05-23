@@ -94,7 +94,7 @@ export function SiteNav() {
                   className="text-3xl font-bold tracking-tight text-muted-foreground transition-colors hover:text-foreground [&.active]:text-primary"
                   style={{
                     animation: `fade-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both`,
-                    animationDelay: `${index * 50}ms`
+                    animationDelay: `${index * 50}ms`,
                   }}
                 >
                   {l.label}
@@ -102,11 +102,11 @@ export function SiteNav() {
               ))}
             </nav>
 
-            <div 
+            <div
               className="flex flex-col gap-4"
               style={{
                 animation: `fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both`,
-                animationDelay: `300ms`
+                animationDelay: `300ms`,
               }}
             >
               <Link

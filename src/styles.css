@@ -39,19 +39,19 @@
 :root {
   --radius: 0.75rem;
   /* Clinical-Organic palette */
-  --background: oklch(0.985 0.005 180);        /* off-white sage */
-  --foreground: oklch(0.205 0.04 250);         /* slate/charcoal */
+  --background: oklch(0.985 0.005 180); /* off-white sage */
+  --foreground: oklch(0.205 0.04 250); /* slate/charcoal */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.205 0.04 250);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.205 0.04 250);
-  --primary: oklch(0.36 0.09 165);             /* deep emerald #064e3b */
+  --primary: oklch(0.36 0.09 165); /* deep emerald #064e3b */
   --primary-foreground: oklch(0.985 0.005 180);
   --secondary: oklch(0.96 0.012 180);
   --secondary-foreground: oklch(0.36 0.09 165);
   --muted: oklch(0.955 0.008 220);
   --muted-foreground: oklch(0.45 0.03 240);
-  --accent: oklch(0.62 0.11 190);              /* mint/teal #0d9488 */
+  --accent: oklch(0.62 0.11 190); /* mint/teal #0d9488 */
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
@@ -71,9 +71,9 @@
 .dark {
   --background: oklch(0.16 0.02 240);
   --foreground: oklch(0.985 0.005 180);
-  --card: oklch(0.20 0.025 240);
+  --card: oklch(0.2 0.025 240);
   --card-foreground: oklch(0.985 0.005 180);
-  --popover: oklch(0.20 0.025 240);
+  --popover: oklch(0.2 0.025 240);
   --popover-foreground: oklch(0.985 0.005 180);
   --primary: oklch(0.62 0.11 190);
   --primary-foreground: oklch(0.16 0.02 240);
@@ -102,7 +102,10 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -132,12 +135,23 @@
   }
   .grid-bg {
     background-image:
-      linear-gradient(to right, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px);
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+        transparent 1px
+      );
     background-size: 56px 56px;
   }
   .animate-fade-up {
     animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease both;
   }
   .animate-blink {
     animation: blink 1s steps(2) infinite;
@@ -145,9 +159,21 @@
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
