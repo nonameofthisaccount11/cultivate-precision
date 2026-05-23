@@ -37,11 +37,6 @@ const indexHtml = `<!DOCTYPE html>
 </html>
 `;
 
-const redirects = "/* /index.html 200\n";
-
 fs.writeFileSync(path.join(distClient, "index.html"), indexHtml, "utf8");
 
-// Comment out or delete the line below so Cloudflare doesn't see this file
-// fs.writeFileSync(path.join(distClient, "_redirects"), redirects, "utf8");
-
-console.log("Wrote dist/client/index.html"); 
+console.log("Wrote dist/client/index.html");
