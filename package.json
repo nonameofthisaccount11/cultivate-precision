@@ -5,15 +5,15 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "postbuild": "node scripts/generate-netlify-client.js",
-    "build:dev": "vite build --mode development",
-    "preview": "vite preview",
-    "deploy": "rm -f dist/client/_redirects && npx wrangler deploy",
-    "lint": "eslint .",
-    "format": "prettier --write ."
-  },
+  "dev": "vite dev",
+  "build": "mkdir -p dist/server && touch dist/server/index.js && vite build",
+  "postbuild": "node scripts/generate-netlify-client.js",
+  "build:dev": "vite build --mode development",
+  "preview": "vite preview",
+  "deploy": "rm -f dist/client/_redirects && npx wrangler deploy",
+  "lint": "eslint .",
+  "format": "prettier --write ."
+},
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
     "@hookform/resolvers": "^5.2.2",
