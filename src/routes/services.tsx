@@ -1,5 +1,8 @@
+"use client";
+
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, Microscope, ShieldCheck, Handshake } from "lucide-react";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -83,9 +86,17 @@ function Services() {
 
       <header className="max-w-3xl animate-fade-up">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">Services</p>
-        <h1 className="mt-3 text-5xl font-extrabold tracking-tight sm:text-6xl">
-          Expertise for <span className="gradient-text">growers and researchers</span>.
-        </h1>
+        <TypewriterEffectSmooth 
+          words={[
+            { text: "Expertise" },
+            { text: "for" },
+            { text: "growers" },
+            { text: "and" },
+            { text: "researchers.", className: "text-primary" },
+          ]}
+          className="mt-3 text-5xl sm:text-6xl font-extrabold tracking-tight"
+          cursorClassName="bg-primary"
+        />
         <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
           Over two decades of field and laboratory experience at NARC Islamabad — from crop disease
           diagnosis and molecular diagnostics to mango disease management and capacity-building

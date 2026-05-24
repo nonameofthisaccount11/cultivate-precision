@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
+import type React from "react";
 import {
   Check,
   ChevronLeft,
@@ -258,7 +259,7 @@ function Appointment() {
                       type="button"
                       onClick={() => setForm({ ...form, date: iso })}
                       className={`flex flex-col items-center rounded-xl border p-3 text-xs transition-all duration-200 cursor-pointer
-                        ${active ? "border-primary bg-primary text-primary-foreground shadow-elegant scale-102" : "border-border bg-card hover:border-accent"}`}
+                        ${active ? "border-primary bg-primary text-primary-foreground shadow-elegant scale-[1.02]" : "border-border bg-card hover:border-accent"}`}
                     >
                       <span className="opacity-70 text-[10px] uppercase font-bold">
                         {d.toLocaleDateString(undefined, { weekday: "short" })}
@@ -281,7 +282,7 @@ function Appointment() {
                     disabled={!form.date}
                     onClick={() => setForm({ ...form, time: t })}
                     className={`rounded-xl border px-4 py-3.5 text-sm font-semibold transition-all duration-200 disabled:opacity-40 cursor-pointer
-                      ${form.time === t ? "border-accent bg-accent text-accent-foreground shadow-elegant scale-102" : "border-border bg-card hover:border-accent"}`}
+                      ${form.time === t ? "border-accent bg-accent text-accent-foreground shadow-elegant scale-[1.02]" : "border-border bg-card hover:border-accent"}`}
                   >
                     {t}
                   </button>
@@ -451,7 +452,7 @@ function Field({
   );
 }
 
-function SummaryItem({ icon: Icon, label, value }: { icon: any; label: string; value: string }) {
+function SummaryItem({ icon: Icon, label, value }: { icon: React.ElementType; label: string; value: string }) {
   return (
     <div className="flex gap-4 p-4 rounded-xl border border-border bg-card/60">
       <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">

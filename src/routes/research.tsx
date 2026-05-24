@@ -115,40 +115,50 @@ function Research() {
       />
 
       {/* BIO */}
-      <section className="grid gap-12 lg:grid-cols-12 animate-fade-up">
-        <div className="lg:col-span-4">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Profile</p>
-          <h1 className="mt-3 text-5xl font-extrabold tracking-tight sm:text-6xl">
-            A scientist's <span className="gradient-text">record</span>.
-          </h1>
-        </div>
-        <div className="lg:col-span-7 lg:col-start-6">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Dr. Faisal Sohail Fateh holds a PhD in Plant Pathology from PMAS Arid Agriculture
-            University, Rawalpindi, and an M.Sc. (Hons) with a silver medal from the University of
-            Arid Agriculture. He has served at the National Agricultural Research Centre (NARC),
-            Islamabad since 2004, rising to Principal Scientific Officer in 2020. His research spans
-            mango sudden death syndrome, citrus decline, wheat rusts, rice diseases and molecular
-            diagnostics. He has developed international research relations with Australia, China,
-            Malaysia, Japan, Saudi Arabia and Russia, and has provided plant pathological services
-            to the Armed Forces of Pakistan.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {[
-              { l: "Peer-reviewed papers", v: "25+" },
-              { l: "Trainings conducted", v: "60+" },
-              { l: "Years at NARC", v: "20+" },
-            ].map((s) => (
-              <div
-                key={s.l}
-                className="rounded-2xl border border-border bg-card p-5 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <p className="text-3xl font-extrabold text-primary">{s.v}</p>
-                <p className="mt-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  {s.l}
-                </p>
-              </div>
-            ))}
+      <section className="animate-fade-up">
+        {/* Label */}
+        <p className="text-xs font-semibold uppercase tracking-widest text-accent">Profile</p>
+
+        {/* Heading + bio in a responsive two-column layout */}
+        <div className="mt-4 grid gap-6 lg:grid-cols-12 lg:gap-14 lg:items-start">
+          {/* Heading column */}
+          <div className="lg:col-span-4">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+              <span className="block">A scientist's</span>
+              <span className="gradient-text block">record.</span>
+            </h1>
+          </div>
+
+          {/* Bio + stats column */}
+          <div className="lg:col-span-8">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Dr. Faisal Sohail Fateh holds a PhD in Plant Pathology from PMAS Arid Agriculture
+              University, Rawalpindi, and an M.Sc. (Hons) with a silver medal from the University
+              of Arid Agriculture. He has served at the National Agricultural Research Centre
+              (NARC), Islamabad since 2004, rising to Principal Scientific Officer in 2020. His
+              research spans mango sudden death syndrome, citrus decline, wheat rusts, rice diseases
+              and molecular diagnostics. He has developed international research relations with
+              Australia, China, Malaysia, Japan, Saudi Arabia and Russia, and has provided plant
+              pathological services to the Armed Forces of Pakistan.
+            </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-5">
+              {[
+                { l: "Peer-reviewed papers", v: "25+" },
+                { l: "Trainings conducted", v: "60+" },
+                { l: "Years at NARC", v: "20+" },
+              ].map((s) => (
+                <div
+                  key={s.l}
+                  className="rounded-2xl border border-border bg-card p-4 sm:p-5 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-center sm:text-left"
+                >
+                  <p className="text-2xl font-extrabold text-primary sm:text-3xl">{s.v}</p>
+                  <p className="mt-1 text-[10px] font-semibold text-muted-foreground uppercase tracking-wider sm:text-xs">
+                    {s.l}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

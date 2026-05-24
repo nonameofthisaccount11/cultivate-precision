@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Leaf, Sun, Moon, Menu, X } from "lucide-react";
-import { useTheme } from "@/hooks/use-theme";
+import { Leaf, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -12,7 +11,6 @@ const links = [
 ] as const;
 
 export function SiteNav() {
-  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => {
@@ -48,19 +46,6 @@ export function SiteNav() {
 
         {/* Actions */}
         <div className="flex items-center gap-2 z-50">
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card/50 text-foreground transition-all hover:bg-foreground/5 hover:scale-105 active:scale-95 cursor-pointer"
-            aria-label="Toggle Theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-4 w-4 text-amber-500 animate-pulse" />
-            ) : (
-              <Moon className="h-4 w-4 text-indigo-950" />
-            )}
-          </button>
-
           {/* Consultation CTA (Desktop) */}
           <Link
             to="/appointment"

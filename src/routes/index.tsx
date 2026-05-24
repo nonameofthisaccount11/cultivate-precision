@@ -47,7 +47,7 @@ function Index() {
       />
 
       {/* HERO */}
-      <section className="relative overflow-hidden pt-6 sm:pt-10">
+      <section className="relative overflow-hidden pt-0 sm:pt-2">
         <div className="absolute inset-0 grid-bg opacity-30 dark:opacity-20" aria-hidden />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-24 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pt-20 lg:pb-28">
           {/* LEFT */}
@@ -104,7 +104,7 @@ function Index() {
                 <img
                   src="/faisal-portrait.jpeg"
                   alt="Dr. Faisal Sohail Fateh, Principal Scientific Officer"
-                  className="w-full object-cover object-top max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] transition-transform duration-700 group-hover:scale-102"
+                  className="w-full object-cover object-top max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] transition-transform duration-700 group-hover:scale-[1.02]"
                   width={896}
                   height={1216}
                 />

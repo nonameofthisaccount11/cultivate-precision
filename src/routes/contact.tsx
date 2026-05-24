@@ -124,7 +124,7 @@ function Floating({
   textarea?: boolean;
 }) {
   const cls =
-    "peer w-full rounded-xl border border-border bg-background px-4 pt-6.5 pb-2.5 text-sm text-foreground transition-all focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20";
+    "peer w-full rounded-xl border border-border bg-background px-4 pt-[1.625rem] pb-[0.625rem] text-sm text-foreground transition-all focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20";
 
   return (
     <div className="relative mb-2">
