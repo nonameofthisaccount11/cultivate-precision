@@ -1,11 +1,9 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "node_modules/wrangle/config-schema.json",
   "name": "faisalmyname",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "dist/server/index.js",
   "assets": {
     "directory": "dist/client"
-  },
-  "no_bundle": false
+  }
 }
